@@ -27,6 +27,7 @@ payload map ( payload01 , indexOfPayload01 ) -> {
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<set-variable value="#[payload]" doc:name="Set Variable" doc:id="306bfb35-a31d-45d2-a01c-e4246618b0f5" variableName="payloadVar"/>
 		<logger level="INFO" doc:name="Logger" doc:id="9bfd84b6-1f28-449e-9119-7e676948d0a1" message="#[payload]"/>
 	</flow>
 </mule>
