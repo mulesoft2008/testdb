@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="test" format="json">
+      <types:shape format="weave" example="test.json"><![CDATA[%dw 2.0
+
+type test = Array<{|  last_update: String,   last_name: String,   actor_id: Number {"typeId": "int"},   first_name: String,   replacemnt: Null|}> {"example": "[{\\\"last_update\\\":\\\"2006-02-15T04:34:33\\\",\\\"last_name\\\":\\\"GUINESS\\\",\\\"actor_id\\\":1,\\\"first_name\\\":\\\"PENELOPE\\\",\\\"replacemnt\\\":null}]"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#2e5b38d6-8c90-4ac8-a8e5-cd479fbdffc5">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="test"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
